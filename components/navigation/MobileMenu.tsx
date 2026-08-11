@@ -58,7 +58,7 @@ export default function MobileMenu({ menuOpen, setMenuOpen }: MenuStateProps) {
               <button
                 onClick={() => setMenuOpen(false)}
                 aria-label="Close navigation menu"
-                className="rounded-md p-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="rounded-md p-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 <svg
                   width="16"
