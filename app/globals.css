@@ -19,6 +19,11 @@
   --foreground: #ededed;
 }
 
+@theme {
+  --breakpoint-xs: 480px;
+  --breakpoint-ml: 1150px;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -27,4 +32,22 @@ body {
 
 .container-padding {
   @apply px-4 sm:px-8 md:px-16 lg:px-32;
+}
+
+@keyframes slide-in-from-right {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-slide-in-from-right {
+  animation: slide-in-from-right 0.28s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out forwards;
 }
