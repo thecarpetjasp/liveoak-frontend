@@ -8,7 +8,7 @@ export default function DesktopMenu() {
   return (
     <div className="hidden ml:flex items-stretch gap-7">
       <ul
-        className="flex items-stretch gap-7"
+        className="flex items-stretch -gap-7"
         onMouseLeave={() => setHoveredLink(null)}
       >
         {NAV_LINKS.map((link) => (
@@ -19,7 +19,7 @@ export default function DesktopMenu() {
           >
             <a
               href={link.href}
-              className="flex items-center text-sm text-foreground/65 hover:text-foreground transition-colors tracking-wide"
+              className="flex items-center text-sm text-foreground/65 hover:text-foreground transition-colors tracking-wide p-3"
             >
               {link.label}
             </a>
