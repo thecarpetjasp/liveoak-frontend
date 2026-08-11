@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@utility boundary {
+    @apply px-4 sm:px-8 md:px-16 lg:px-32;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/InterVariable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --font-sans: "Inter", sans-serif;
+}
