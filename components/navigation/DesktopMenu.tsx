@@ -26,7 +26,7 @@ export default function DesktopMenu() {
             {hoveredLink === link.href && (
               <motion.span
                 layoutId="nav-underline"
-                className="absolute bottom-0 left-0 right-0 h-px bg-foreground"
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-secondary dark:bg-primary"
                 transition={{ duration: 0.2 }}
               />
             )}
