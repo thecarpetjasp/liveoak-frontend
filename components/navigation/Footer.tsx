@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { NAV_LINKS } from "./navigation-constants";
 import Image from "next/image";
+import liveOakVerticalLight from "@/public/live-oak-vertical-light.svg";
+import liveOakVerticalBlueText from "@/public/live-oak-vertical-blue-text.svg";
+import youCodeMeSmall from "@/public/youcodeme-small-logo.png";
 
 export default function Footer() {
   const triggerRef = useRef<HTMLDivElement>(null);
@@ -102,14 +105,14 @@ export function FooterContent() {
         <div className="flex flex-col gap-3">
           <div className="text-3xl font-semibold tracking-tight">
             <Image
-              src={"/live-oak-vertical-light.svg"}
+              src={liveOakVerticalLight}
               alt="LiveOak e-NG"
               width={1851}
               height={346}
               className="h-auto w-32 hidden dark:block"
             ></Image>
             <Image
-              src={"/live-oak-vertical-blue-text.svg"}
+              src={liveOakVerticalBlueText}
               alt="LiveOak e-NG"
               width={1851}
               height={346}
@@ -211,11 +214,7 @@ export function FooterMadeBy() {
           }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          <Image
-            src={"/youcodeme-small-logo.png"}
-            alt="YouCodeMe Ltd."
-            fill
-          ></Image>
+          <Image src={youCodeMeSmall} alt="YouCodeMe Ltd." fill></Image>
         </motion.div>
         <div className="overflow-hidden">
           <motion.p
