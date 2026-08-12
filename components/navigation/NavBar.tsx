@@ -7,6 +7,8 @@ import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
 import Image from "next/image";
 import { motion } from "motion/react";
+import lightLiveOakWebsiteLogo from "@/public/live-oak-website-light-bg.svg";
+import darkLiveOakWebsiteLogo from "@/public/live-oak-website-dark-bg.svg";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -63,7 +65,7 @@ export default function NavBar() {
             className="xs:shrink-0 self-center hover:opacity-80 transition-opacity"
           >
             <Image
-              src={"/live-oak-website-light-bg.svg"}
+              src={lightLiveOakWebsiteLogo}
               alt="LiveOak e-NG"
               width={1851}
               height={346}
@@ -71,7 +73,7 @@ export default function NavBar() {
               preload
             ></Image>
             <Image
-              src={"/live-oak-website-dark-bg.svg"}
+              src={darkLiveOakWebsiteLogo}
               alt="LiveOak e-NG"
               width={1851}
               height={346}
