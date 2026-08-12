@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
+import { NAV_LINKS } from "./navigation-constants";
+import Image from "next/image";
 
 export default function Footer() {
   const triggerRef = useRef<HTMLDivElement>(null);
@@ -55,7 +57,7 @@ export default function Footer() {
   const scale = useTransform(revealProgress, [0, 1], [0.9, 1]);
 
   // Blur overlay
-  const blur = useTransform(revealProgress, [0, 1], [3, 0]);
+  const blur = useTransform(revealProgress, [0, 1], [5, 0]);
 
   const backdropFilter = useTransform(blur, (value) => `blur(${value}px)`);
 
@@ -70,7 +72,7 @@ export default function Footer() {
         }}
       >
         <motion.div
-          className="relative flex h-full w-full items-center justify-center"
+          className="relative flex h-full w-full"
           style={{
             scale,
           }}
@@ -91,112 +93,136 @@ export default function Footer() {
 }
 
 export function FooterContent() {
+  const getLink = (href: string) =>
+    NAV_LINKS.find((link) => link.href === href);
+
+  const exploreLinks = [
+    getLink("#home"),
+    getLink("#about"),
+    getLink("#news"),
+  ].filter(Boolean);
+
+  const discoverLinks = [
+    getLink("#emethane-process"),
+    getLink("#project-map"),
+    getLink("#faq"),
+  ].filter(Boolean);
+
+  const connectLinks = [getLink("#contact")].filter(Boolean);
+
   return (
-    <div className="w-full bg-white px-6 py-16 text-black md:px-10 md:py-20">
+    <div className="w-full bg-white text-black pt-10 pb-6 container-padding">
       <div className="mx-auto max-w-7xl">
         {/* Branding */}
-        <div className="flex flex-col gap-6">
-          <div className="text-3xl font-semibold tracking-tight">YourBrand</div>
+        <div className="flex flex-col gap-3">
+          <div className="text-3xl font-semibold tracking-tight">
+            <Image
+              src={"/live-oak-vertical-light.svg"}
+              alt="LiveOak e-NG"
+              width={1851}
+              height={346}
+              className="h-auto w-32"
+            ></Image>
+          </div>
 
-          <p className="max-w-md text-base leading-7 text-black/50">
-            Building thoughtful digital experiences with modern technology and
-            clean design.
+          <p className="max-w-md leading-7 text-black/50">
+            The future of natural gas, made differently.
           </p>
         </div>
 
         {/* Navigation */}
-        <div className="mt-20 grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 md:mt-28 md:grid-cols-4">
+        <div className="mt-10 grid grid-cols-2 gap-x-12 gap-y-12 border-t border-black/10 pt-10 md:mt-28 md:grid-cols-3 md:gap-x-16">
+          {/* Explore */}
           <div>
-            <h3 className="text-sm font-semibold">Product</h3>
+            <h3 className="text-sm font-semibold">Explore</h3>
 
             <ul className="mt-5 space-y-3 text-sm text-black/50">
-              <li>
-                <a href="#" className="transition-colors hover:text-black">
-                  Features
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-black">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-black">
-                  Changelog
-                </a>
-              </li>
+              {exploreLinks.map((link) => (
+                <li key={link!.href}>
+                  <a
+                    href={link!.href}
+                    className="transition-colors hover:text-black"
+                  >
+                    {link!.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Discover */}
           <div>
-            <h3 className="text-sm font-semibold">Company</h3>
+            <h3 className="text-sm font-semibold">Discover</h3>
 
             <ul className="mt-5 space-y-3 text-sm text-black/50">
-              <li>
-                <a href="#" className="transition-colors hover:text-black">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-black">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-black">
-                  Careers
-                </a>
-              </li>
+              {discoverLinks.map((link) => (
+                <li key={link!.href}>
+                  <a
+                    href={link!.href}
+                    className="transition-colors hover:text-black"
+                  >
+                    {link!.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Connect */}
           <div>
-            <h3 className="text-sm font-semibold">Legal</h3>
+            <h3 className="text-sm font-semibold">Connect</h3>
 
             <ul className="mt-5 space-y-3 text-sm text-black/50">
-              <li>
-                <a href="#" className="transition-colors hover:text-black">
-                  Privacy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-black">
-                  Terms
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold">Social</h3>
-
-            <ul className="mt-5 space-y-3 text-sm text-black/50">
-              <li>
-                <a href="#" className="transition-colors hover:text-black">
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-black">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-black">
-                  X
-                </a>
-              </li>
+              {connectLinks.map((link) => (
+                <li key={link!.href}>
+                  <a
+                    href={link!.href}
+                    className="transition-colors hover:text-black"
+                  >
+                    {link!.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
         {/* Bottom */}
         <div className="mt-20 flex flex-col gap-4 border-t border-black/10 pt-6 text-sm text-black/40 sm:mt-28 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 YourBrand. All rights reserved.</p>
-
-          <p>Made with care.</p>
+          <FooterCopyright></FooterCopyright>
+          <FooterMadeBy></FooterMadeBy>
         </div>
       </div>
+    </div>
+  );
+}
+
+export function FooterCopyright() {
+  const currentYear = new Date().getFullYear();
+
+  return <p>© {currentYear} LiveOak e-NG. All rights reserved.</p>;
+}
+
+export function FooterMadeBy() {
+  return (
+    <div className="flex items-center gap-2">
+      <p>Made by</p>
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://youcodeme.com"
+        className="flex items-center gap-1 hover:text-black transition"
+      >
+        <div className="size-5 relative rounded-sm overflow-hidden">
+          <Image
+            src={"/youcodeme-small-logo.png"}
+            alt="YouCodeMe Ltd."
+            width={180}
+            height={180}
+          ></Image>
+        </div>
+        <p>YouCodeMe Ltd.</p>
+      </a>
     </div>
   );
 }

@@ -68,6 +68,7 @@ export default function NavBar() {
               width={1851}
               height={346}
               className="w-64 h-auto dark:hidden"
+              preload
             ></Image>
             <Image
               src={"/live-oak-website-dark-bg.svg"}
@@ -75,6 +76,7 @@ export default function NavBar() {
               width={1851}
               height={346}
               className="w-64 h-auto hidden dark:block"
+              preload
             ></Image>
           </Link>
 
