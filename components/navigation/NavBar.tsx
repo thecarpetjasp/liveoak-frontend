@@ -54,7 +54,7 @@ export default function NavBar() {
         }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="sticky top-0 z-40 w-full border-b border-gray-200 dark:border-gray-800 bg-background/80 backdrop-blur-sm"
+        className="sticky top-0 z-40 w-full bg-background backdrop-blur-sm drop-shadow-lg dark:drop-shadow-none dark:border-b dark:border-b-gray-800"
       >
         <nav className="flex items-stretch justify-between container-padding h-14">
           {/* Brand — opts out of stretch */}

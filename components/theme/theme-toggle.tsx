@@ -34,7 +34,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(NEXT_THEME[current] ?? "light")}
-      className="rounded-md p-2 text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
+      className="rounded-md p-2 text-sm transition-colors hover:bg-secondary dark:hover:bg-primary/50 cursor-pointer"
       aria-label={`Switch theme (current: ${current})`}
     >
       {ICON[current]}

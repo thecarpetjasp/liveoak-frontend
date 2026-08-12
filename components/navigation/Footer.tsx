@@ -56,37 +56,22 @@ export default function Footer() {
   // Footer content scale
   const scale = useTransform(revealProgress, [0, 1], [0.9, 1]);
 
-  // Blur overlay
-  const blur = useTransform(revealProgress, [0, 1], [5, 0]);
-
-  const backdropFilter = useTransform(blur, (value) => `blur(${value}px)`);
-
   return (
     <>
       <div ref={triggerRef} className="h-px w-full" />
 
-      <motion.footer
-        className="sticky bottom-0 z-0 w-full bg-white text-black"
-        style={{
-          opacity,
-        }}
-      >
-        <motion.div
-          className="relative flex h-full w-full"
-          style={{
-            scale,
-          }}
-        >
-          <FooterContent></FooterContent>
-          {/* Blur layer */}
+      <motion.footer className="sticky bottom-0 z-0 w-full bg-primary dark:bg-foreground text-background">
+        <div className="relative">
           <motion.div
-            className="pointer-events-none absolute inset-0"
+            className="relative flex h-full w-full"
             style={{
-              backdropFilter,
-              WebkitBackdropFilter: backdropFilter,
+              scale,
+              opacity,
             }}
-          />
-        </motion.div>
+          >
+            <FooterContent></FooterContent>
+          </motion.div>
+        </div>
       </motion.footer>
     </>
   );
@@ -97,7 +82,7 @@ export function FooterContent() {
     NAV_LINKS.find((link) => link.href === href);
 
   const exploreLinks = [
-    getLink("#home"),
+    getLink("/"),
     getLink("#about"),
     getLink("#news"),
   ].filter(Boolean);
@@ -111,7 +96,7 @@ export function FooterContent() {
   const connectLinks = [getLink("#contact")].filter(Boolean);
 
   return (
-    <div className="w-full bg-white text-black pt-10 pb-6 container-padding">
+    <div className="w-full pt-10 pb-6 container-padding">
       <div className="mx-auto max-w-7xl">
         {/* Branding */}
         <div className="flex flex-col gap-3">
@@ -121,74 +106,43 @@ export function FooterContent() {
               alt="LiveOak e-NG"
               width={1851}
               height={346}
-              className="h-auto w-32"
+              className="h-auto w-32 hidden dark:block"
+            ></Image>
+            <Image
+              src={"/live-oak-vertical-blue-text.svg"}
+              alt="LiveOak e-NG"
+              width={1851}
+              height={346}
+              className="h-auto w-32 dark:hidden"
             ></Image>
           </div>
 
-          <p className="max-w-md leading-7 text-black/50">
+          <p className="max-w-lg leading-7 text-current/80 tracking-widest font-semibold uppercase text-sm">
             The future of natural gas, made differently.
           </p>
         </div>
 
         {/* Navigation */}
-        <div className="mt-10 grid grid-cols-2 gap-x-12 gap-y-12 border-t border-black/10 pt-10 md:mt-28 md:grid-cols-3 md:gap-x-16">
+        <div className="mt-10 grid grid-cols-2 gap-x-12 gap-y-12 border-t border-current/25 pt-10 md:mt-28 md:grid-cols-3 md:gap-x-16">
           {/* Explore */}
-          <div>
-            <h3 className="text-sm font-semibold">Explore</h3>
-
-            <ul className="mt-5 space-y-3 text-sm text-black/50">
-              {exploreLinks.map((link) => (
-                <li key={link!.href}>
-                  <a
-                    href={link!.href}
-                    className="transition-colors hover:text-black"
-                  >
-                    {link!.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+          <FooterColumnLinks
+            title={"Explore"}
+            links={exploreLinks}
+          ></FooterColumnLinks>
           {/* Discover */}
-          <div>
-            <h3 className="text-sm font-semibold">Discover</h3>
-
-            <ul className="mt-5 space-y-3 text-sm text-black/50">
-              {discoverLinks.map((link) => (
-                <li key={link!.href}>
-                  <a
-                    href={link!.href}
-                    className="transition-colors hover:text-black"
-                  >
-                    {link!.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+          <FooterColumnLinks
+            title={"Discover"}
+            links={discoverLinks}
+          ></FooterColumnLinks>
           {/* Connect */}
-          <div>
-            <h3 className="text-sm font-semibold">Connect</h3>
-
-            <ul className="mt-5 space-y-3 text-sm text-black/50">
-              {connectLinks.map((link) => (
-                <li key={link!.href}>
-                  <a
-                    href={link!.href}
-                    className="transition-colors hover:text-black"
-                  >
-                    {link!.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FooterColumnLinks
+            title={"Connect"}
+            links={connectLinks}
+          ></FooterColumnLinks>
         </div>
 
         {/* Bottom */}
-        <div className="mt-20 flex flex-col gap-4 border-t border-black/10 pt-6 text-sm text-black/40 sm:mt-28 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-20 flex flex-col gap-4 border-t border-black/10 pt-6 text-sm sm:mt-28 sm:flex-row sm:items-center sm:justify-between">
           <FooterCopyright></FooterCopyright>
           <FooterMadeBy></FooterMadeBy>
         </div>
@@ -197,32 +151,84 @@ export function FooterContent() {
   );
 }
 
+export function FooterColumnLinks({
+  title,
+  links,
+}: {
+  title: string;
+  links: ({ href: string; label: string } | undefined)[];
+}) {
+  return (
+    <div>
+      <h3 className="text-sm font-semibold tracking-widest text-secondary">
+        {title}
+      </h3>
+
+      <ul className="mt-5 space-y-3 text-sm">
+        {links.map((link) => (
+          <li key={link!.href}>
+            <a
+              href={link!.href}
+              className="transition-colors hover:text-current text-current/80 relative group py-1"
+            >
+              {link!.label}
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-secondary origin-left scale-x-0 group-hover:scale-x-100 transition"></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export function FooterCopyright() {
   const currentYear = new Date().getFullYear();
 
-  return <p>© {currentYear} LiveOak e-NG. All rights reserved.</p>;
+  return (
+    <p className="text-current/80">
+      © {currentYear} LiveOak e-NG. All rights reserved.
+    </p>
+  );
 }
 
 export function FooterMadeBy() {
   return (
     <div className="flex items-center gap-2">
-      <p>Made by</p>
-      <a
+      <p className="text-current/80">Made by</p>
+      <motion.a
         rel="noopener noreferrer"
         target="_blank"
         href="https://youcodeme.com"
-        className="flex items-center gap-1 hover:text-black transition"
+        className="flex items-center gap-1 hover:text-current text-current/80 transition"
+        whileHover="hover"
       >
-        <div className="size-5 relative rounded-sm overflow-hidden">
+        <motion.div
+          className="size-6 relative rounded-sm overflow-hidden origin-left"
+          variants={{
+            hover: {
+              scale: 2,
+            },
+          }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        >
           <Image
             src={"/youcodeme-small-logo.png"}
             alt="YouCodeMe Ltd."
-            width={180}
-            height={180}
+            fill
           ></Image>
+        </motion.div>
+        <div className="overflow-hidden">
+          <motion.p
+            variants={{
+              hover: {
+                x: "-100%",
+              },
+            }}
+          >
+            YouCodeMe Ltd.
+          </motion.p>
         </div>
-        <p>YouCodeMe Ltd.</p>
-      </a>
+      </motion.a>
     </div>
   );
 }

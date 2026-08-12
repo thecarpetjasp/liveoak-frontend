@@ -58,7 +58,7 @@ export default function MobileMenu({ menuOpen, setMenuOpen }: MenuStateProps) {
               <button
                 onClick={() => setMenuOpen(false)}
                 aria-label="Close navigation menu"
-                className="rounded-md p-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
+                className="rounded-md p-2 hover:bg-secondary dark:hover:bg-primary/50 hover:text-white transition-colors cursor-pointer"
               >
                 <svg
                   width="16"
@@ -92,9 +92,9 @@ export default function MobileMenu({ menuOpen, setMenuOpen }: MenuStateProps) {
                   {link.label}
                   {hoveredLink == link.href && (
                     <motion.span
-                      layoutId="link-bg"
+                      layoutId="hover-line"
                       transition={{ duration: 0.2 }}
-                      className="absolute top-0 left-0 h-full w-px bg-foreground"
+                      className="absolute top-0 left-0 h-full w-0.5 bg-secondary dark:bg-primary"
                     />
                   )}
                 </a>

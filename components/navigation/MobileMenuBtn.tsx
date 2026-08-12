@@ -6,7 +6,7 @@ export default function MobileMenuBtn({
 }: MenuStateProps) {
   return (
     <button
-      className="self-center flex ml:hidden rounded-md p-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
+      className="self-center flex ml:hidden rounded-md p-2 hover:bg-secondary dark:hover:bg-primary/50 hover:text-white transition-colors cursor-pointer"
       onClick={() => setMenuOpen(true)}
       aria-label="Open navigation menu"
       aria-expanded={menuOpen}
