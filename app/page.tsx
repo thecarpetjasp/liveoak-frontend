@@ -1,11 +1,8 @@
-import NavBar from "@/components/navigation/NavBar";
-
 export default function Home() {
   return (
-    <main>
-      <NavBar></NavBar>
+    <main className="relative z-10 bg-black">
       <section id="home" className="h-screen">
-        This is the Home section
+        This is the home page
       </section>
       <section id="about" className="h-screen">
         This is the About section
