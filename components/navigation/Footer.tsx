@@ -85,7 +85,7 @@ export function FooterContent() {
     NAV_LINKS.find((link) => link.href === href);
 
   const exploreLinks = [
-    getLink("/"),
+    getLink("#home"),
     getLink("#about"),
     getLink("#news"),
   ].filter(Boolean);
