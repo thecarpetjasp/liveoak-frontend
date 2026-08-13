@@ -11,7 +11,7 @@ export default function HeroDetail() {
         initial={{ y: 50, opacity: 0, filter: "blur(12px)" }}
         animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{ duration: 1, ease: easeInOut }}
-        className="z-10 text-7xl font-semibold tracking-tighter"
+        className="z-10 lg:text-7xl md:text-6xl text-5xl font-semibold tracking-tighter"
       >
         The future of natural gas.
         <br />
@@ -21,7 +21,7 @@ export default function HeroDetail() {
         initial={{ y: 50, opacity: 0, filter: "blur(12px)" }}
         animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{ duration: 1, ease: easeInOut, delay: 0.1 }}
-        className="text-xl text-current/80"
+        className="md:text-xl sm:text-lg text-base text-current/80"
       >
         Project Live Oak is developing a lower-carbon e-NG facility near
         Norfolk, Nebraska, producing synthetic natural gas from renewable
@@ -38,6 +38,7 @@ export function PromotionalMsg() {
       initial={{ opacity: 0, y: -50, filter: "blur(12px)" }}
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 1, ease: easeInOut, delay: 0.1 }}
+      className="text-xs sm:text-base"
     >
       <p className="text-center inline-block px-3 py-1.5 rounded-full border-primary border-2 bg-primary/50">
         We can place a promotional message here.{" "}
