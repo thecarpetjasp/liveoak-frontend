@@ -63,7 +63,7 @@ export default function Footer() {
     <>
       <div ref={triggerRef} className="h-px w-full" />
 
-      <motion.footer className="sticky bottom-0 z-0 w-full bg-primary dark:bg-foreground text-background">
+      <motion.footer className="sticky bottom-0 z-0 w-full bg-primary dark:bg-foreground text-white dark:text-black">
         <div className="relative">
           <motion.div
             className="relative flex h-full w-full"
