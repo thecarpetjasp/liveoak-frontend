@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 import { ThemeToggle } from "../theme/theme-toggle";
 import { NAV_LINKS } from "./navigation-constants";
 import { MenuStateProps } from "./navigation-types";
+import Image from "next/image";
+
+import liveOakIconBlue from "@/public/live-oak-icon-blue.svg";
+import liveOakIconGreen from "@/public/live-oak-icon-green.svg";
 
 export default function MobileMenu({ menuOpen, setMenuOpen }: MenuStateProps) {
   // Close on Escape key
@@ -54,7 +58,20 @@ export default function MobileMenu({ menuOpen, setMenuOpen }: MenuStateProps) {
           >
             {/* Panel header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-800">
-              <span className="text-sm font-semibold">Menu</span>
+              <div className="size-12 relative -ml-2">
+                <Image
+                  src={liveOakIconBlue}
+                  alt="LiveOak Icon Blue"
+                  fill
+                  className="dark:hidden"
+                ></Image>
+                <Image
+                  src={liveOakIconGreen}
+                  alt="LiveOak Icon Green"
+                  fill
+                  className="hidden dark:block"
+                ></Image>
+              </div>
               <button
                 onClick={() => setMenuOpen(false)}
                 aria-label="Close navigation menu"
@@ -103,7 +120,7 @@ export default function MobileMenu({ menuOpen, setMenuOpen }: MenuStateProps) {
 
             {/* Theme toggle pinned to the bottom */}
             <div className="border-t border-gray-200 dark:border-gray-800 px-4 py-3 flex items-center justify-between">
-              <span className="text-sm text-foreground/60">Theme</span>
+              <span className="text-sm text-foreground">Theme</span>
               <ThemeToggle />
             </div>
           </motion.div>
