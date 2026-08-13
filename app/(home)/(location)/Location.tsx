@@ -78,7 +78,7 @@ export default function Location() {
           Location
         </h2>
         <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight text-white">
-          Norfolk, Nebraska.
+          Norfolk, Nebraska
         </h3>
       </motion.div>
     </section>
