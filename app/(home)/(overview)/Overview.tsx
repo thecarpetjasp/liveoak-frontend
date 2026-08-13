@@ -81,7 +81,7 @@ export default function Overview() {
           <div className="relative w-full lg:h-full h-96 overflow-hidden rounded-4xl">
             <Image
               src={renewableEnergy}
-              alt="test"
+              alt="Solar panels"
               fill
               className="object-cover"
             ></Image>
@@ -99,7 +99,7 @@ export default function Overview() {
           <div className="relative w-full lg:h-full h-96 overflow-hidden rounded-4xl">
             <Image
               src={renewableEnergy}
-              alt="test"
+              alt="Solar panels"
               fill
               className="object-cover"
             ></Image>
