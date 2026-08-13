@@ -53,7 +53,7 @@ export default function Contact() {
             Contact
           </h2>
           <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight">
-            Get in touch with us.
+            Get in touch with us
           </h3>
         </motion.div>
 
