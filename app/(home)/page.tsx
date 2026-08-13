@@ -1,5 +1,6 @@
 import About from "./(about)/About";
 import Contact from "./(contact)/Contact";
+import EngProcess from "./(eng-process)/EngProcess";
 import Hero from "./(hero)/Hero";
 import Location from "./(location)/Location";
 import News from "./(news)/News";
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero></Hero>
       <Overview></Overview>
       <About></About>
+      <EngProcess></EngProcess>
       <News></News>
       <Contact></Contact>
       <Location></Location>
