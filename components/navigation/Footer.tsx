@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { NAV_LINKS } from "./navigation-constants";
 import Image from "next/image";
+import liveOakVerticalDark from "@/public/live-oak-vertical-dark.svg";
 import liveOakVerticalLight from "@/public/live-oak-vertical-light.svg";
-import liveOakVerticalBlueText from "@/public/live-oak-vertical-blue-text.svg";
 import youCodeMeSmall from "@/public/youcodeme-small-logo.png";
 
 export default function Footer() {
@@ -63,7 +63,7 @@ export default function Footer() {
     <>
       <div ref={triggerRef} className="h-px w-full" />
 
-      <motion.footer className="sticky bottom-0 z-0 w-full bg-primary dark:bg-foreground text-white dark:text-black">
+      <motion.footer className="sticky bottom-0 z-0 w-full bg-background text-foreground">
         <div className="relative">
           <motion.div
             className="relative flex h-full w-full"
@@ -105,14 +105,14 @@ export function FooterContent() {
         <div className="flex flex-col gap-3">
           <div className="text-3xl font-semibold tracking-tight">
             <Image
-              src={liveOakVerticalLight}
+              src={liveOakVerticalDark}
               alt="LiveOak e-NG"
               width={1851}
               height={346}
               className="h-auto w-32 hidden dark:block"
             ></Image>
             <Image
-              src={liveOakVerticalBlueText}
+              src={liveOakVerticalLight}
               alt="LiveOak e-NG"
               width={1851}
               height={346}
@@ -163,7 +163,7 @@ export function FooterColumnLinks({
 }) {
   return (
     <div>
-      <h3 className="text-sm font-semibold tracking-widest text-secondary">
+      <h3 className="text-sm font-semibold tracking-widest text-secondary dark:text-primary">
         {title}
       </h3>
 
@@ -175,7 +175,7 @@ export function FooterColumnLinks({
               className="transition-colors hover:text-current text-current/80 relative group py-1"
             >
               {link!.label}
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-secondary origin-left scale-x-0 group-hover:scale-x-100 transition"></span>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-secondary dark:bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition"></span>
             </a>
           </li>
         ))}
