@@ -1,4 +1,5 @@
 import About from "./(about)/About";
+import Contact from "./(contact)/Contact";
 import Hero from "./(hero)/Hero";
 import Overview from "./(overview)/Overview";
 
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero></Hero>
       <Overview></Overview>
       <About></About>
+      <Contact></Contact>
     </main>
   );
 }
