@@ -12,8 +12,8 @@ export default function Overview() {
     <section className="container-padding section-padding">
       <div className="max-w-7xl w-full mx-auto flex max-lg:flex-col gap-12">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50, filter: "blur(12px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1, ease: easeOut }}
           className="flex flex-col gap-8 lg:w-1/2"
@@ -72,8 +72,8 @@ export default function Overview() {
         </motion.div>
         {/* Image for desktop */}
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -50, filter: "blur(12px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1, ease: easeOut }}
           className="lg:w-1/2 max-lg:hidden"
@@ -81,7 +81,7 @@ export default function Overview() {
           <div className="relative w-full lg:h-full h-96 overflow-hidden rounded-4xl">
             <Image
               src={renewableEnergy}
-              alt="test"
+              alt="Solar panels"
               fill
               className="object-cover"
             ></Image>
@@ -99,7 +99,7 @@ export default function Overview() {
           <div className="relative w-full lg:h-full h-96 overflow-hidden rounded-4xl">
             <Image
               src={renewableEnergy}
-              alt="test"
+              alt="Solar panels"
               fill
               className="object-cover"
             ></Image>

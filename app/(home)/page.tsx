@@ -1,3 +1,4 @@
+import About from "./(about)/About";
 import Hero from "./(hero)/Hero";
 import Overview from "./(overview)/Overview";
 
@@ -6,6 +7,7 @@ export default function Home() {
     <main className="relative z-10 bg-background">
       <Hero></Hero>
       <Overview></Overview>
+      <About></About>
     </main>
   );
 }
