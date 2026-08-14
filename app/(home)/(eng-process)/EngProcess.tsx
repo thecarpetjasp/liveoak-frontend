@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { Droplets, Flame, Leaf, LucideProps, Zap } from "lucide-react";
-import { easeOut, motion, useScroll, useTransform } from "motion/react";
+import { easeOut, motion, useScroll } from "motion/react";
 import { ForwardRefExoticComponent, RefAttributes } from "react";
 
 // ─── Data ─────────────────────────────────────────────────────────────────
@@ -57,7 +57,7 @@ export default function EngProcess() {
     offset: ["start 0.85", "end 0.5"],
   });
 
-  const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const scaleY = scrollYProgress;
 
   return (
     <section className="section-padding container-padding">
