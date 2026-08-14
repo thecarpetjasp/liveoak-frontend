@@ -54,7 +54,7 @@ export default function EngProcess() {
 
   const { scrollYProgress } = useScroll({
     target: processRef,
-    offset: ["start 0.85", "end 0.5"],
+    offset: ["start 0.85", "end 0.75"],
   });
 
   const scaleY = useSpring(scrollYProgress, {
@@ -94,10 +94,10 @@ export default function EngProcess() {
         {/* Animated process steps */}
         <div ref={processRef} className="relative max-w-2xl">
           {/* Track — faint background line */}
-          <div className="absolute left-5 top-5 bottom-5 w-px bg-current/10" />
+          <div className="absolute left-5 top-5 bottom-5 w-0.5 bg-current/10" />
 
           {/* Scroll-driven fill */}
-          <div className="absolute left-5 top-5 bottom-5 w-px overflow-hidden">
+          <div className="absolute left-5 top-5 bottom-5 w-0.5 overflow-hidden">
             <motion.div
               className="absolute inset-0 origin-top bg-secondary dark:bg-primary"
               style={{ scaleY }}
@@ -170,7 +170,7 @@ function ProcessStep({ step, index }: { step: Step; index: number }) {
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
-        viewport={{ once: true, amount: 0.9 }}
+        viewport={{ once: true, amount: 0.9, margin: "0px 0px -150px 0px" }}
         transition={{
           type: "spring",
           stiffness: 300,
@@ -186,7 +186,7 @@ function ProcessStep({ step, index }: { step: Step; index: number }) {
       <motion.div
         initial={{ opacity: 0, x: 24, filter: "blur(8px)" }}
         whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.5, margin: "0px 0px -150px 0px" }}
         transition={{
           duration: 0.8,
           ease: easeOut,
