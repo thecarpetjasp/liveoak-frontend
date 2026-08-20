@@ -2,7 +2,16 @@
 
 import { useRef } from "react";
 import { Droplets, Flame, Leaf, LucideProps, Zap } from "lucide-react";
-import { easeOut, motion, useScroll, useTransform } from "motion/react";
+import {
+  animate,
+  easeOut,
+  motion,
+  MotionValue,
+  useMotionValue,
+  useMotionValueEvent,
+  useScroll,
+  useSpring,
+} from "motion/react";
 import { ForwardRefExoticComponent, RefAttributes } from "react";
 
 // ─── Data ─────────────────────────────────────────────────────────────────
@@ -54,10 +63,14 @@ export default function EngProcess() {
 
   const { scrollYProgress } = useScroll({
     target: processRef,
-    offset: ["start 0.85", "end 0.5"],
+    offset: ["start 0.85", "end 0.75"],
   });
 
-  const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   return (
     <section className="section-padding container-padding">
@@ -90,10 +103,10 @@ export default function EngProcess() {
         {/* Animated process steps */}
         <div ref={processRef} className="relative max-w-2xl">
           {/* Track — faint background line */}
-          <div className="absolute left-5 top-5 bottom-5 w-px bg-current/10" />
+          <div className="absolute left-5 top-5 bottom-5 w-0.5 bg-current/10" />
 
           {/* Scroll-driven fill */}
-          <div className="absolute left-5 top-5 bottom-5 w-px overflow-hidden">
+          <div className="absolute left-5 top-5 bottom-5 w-0.5 overflow-hidden">
             <motion.div
               className="absolute inset-0 origin-top bg-secondary dark:bg-primary"
               style={{ scaleY }}
@@ -102,7 +115,13 @@ export default function EngProcess() {
 
           <div className="flex flex-col gap-12">
             {STEPS.map((step, i) => (
-              <ProcessStep key={step.number} step={step} index={i} />
+              <ProcessStep
+                key={step.number}
+                step={step}
+                index={i}
+                totalSteps={STEPS.length}
+                scrollYProgress={scrollYProgress}
+              />
             ))}
           </div>
         </div>
@@ -159,37 +178,54 @@ export default function EngProcess() {
 
 // ─── ProcessStep ──────────────────────────────────────────────────────────
 
-function ProcessStep({ step, index }: { step: Step; index: number }) {
+function ProcessStep({
+  step,
+  index,
+  totalSteps,
+  scrollYProgress,
+}: {
+  step: Step;
+  index: number;
+  totalSteps: number;
+  scrollYProgress: MotionValue<number>;
+}) {
+  const opacity = useMotionValue(0);
+  const scale = useMotionValue(0);
+  const x = useMotionValue(24);
+  const stepProgress = Math.max(0.1, index / (totalSteps - 1));
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest >= stepProgress) {
+      animate(opacity, 1, {
+        type: "spring",
+        stiffness: 300,
+        damping: 18,
+      });
+      animate(scale, 1, {
+        type: "spring",
+        stiffness: 300,
+        damping: 32,
+      });
+      animate(x, 0, {
+        type: "spring",
+        stiffness: 300,
+        damping: 100,
+      });
+    }
+  });
+
   return (
     <div className="flex gap-8 items-start">
       {/* Numbered circle — spring pop on scroll into view */}
       <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        viewport={{ once: true, amount: 0.9 }}
-        transition={{
-          type: "spring",
-          stiffness: 300,
-          damping: 18,
-          delay: index * 0.04,
-        }}
+        style={{ opacity, scale }}
         className="shrink-0 relative z-10 flex items-center justify-center size-10 rounded-full bg-secondary dark:bg-primary text-white text-sm font-bold"
       >
         {step.number}
       </motion.div>
 
       {/* Content — slide in from right with blur */}
-      <motion.div
-        initial={{ opacity: 0, x: 24, filter: "blur(8px)" }}
-        whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{
-          duration: 0.8,
-          ease: easeOut,
-          delay: 0.12 + index * 0.04,
-        }}
-        className="flex flex-col gap-2 pt-1.5"
-      >
+      <motion.div style={{ opacity, x }} className="flex flex-col gap-2 pt-1.5">
         <div className="flex items-center gap-2">
           <step.Icon className="size-4 shrink-0 text-secondary dark:text-primary" />
           <h4 className="text-xl font-semibold tracking-tight">{step.title}</h4>
