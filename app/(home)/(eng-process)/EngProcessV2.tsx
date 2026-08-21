@@ -14,11 +14,8 @@ import {
   Ship,
   Zap,
 } from "lucide-react";
-import {
-  ForwardRefExoticComponent,
-  LucideProps,
-  RefAttributes,
-} from "react";
+import { LucideProps } from "lucide-react";
+import { ForwardRefExoticComponent, RefAttributes } from "react";
 import { easeOut, motion } from "motion/react";
 
 type LucideIcon = ForwardRefExoticComponent<
