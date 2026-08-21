@@ -57,9 +57,8 @@ export default function FAQ() {
   const toggle = (i: number) => setOpenIndex((prev) => (prev === i ? null : i));
 
   return (
-    <section className="section-padding container-padding">
+    <section id="faq" className="section-padding container-padding">
       <div className="max-w-7xl w-full mx-auto flex flex-col gap-16">
-
         {/* ── Header ──────────────────────────────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 50, filter: "blur(12px)" }}
@@ -128,7 +127,6 @@ export default function FAQ() {
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

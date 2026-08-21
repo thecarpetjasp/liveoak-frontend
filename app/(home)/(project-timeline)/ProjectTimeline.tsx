@@ -99,7 +99,7 @@ export default function ProjectTimeline() {
               Project Timeline
             </h2>
             <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight">
-              From partnership to production.
+              From partnership to production
             </h3>
           </div>
           <p className="text-lg text-current/80 leading-relaxed">

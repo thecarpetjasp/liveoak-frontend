@@ -12,26 +12,29 @@ type Reason = {
 
 const REASONS: Reason[] = [
   {
-    title: "Built on Nebraska's strengths.",
+    title: "Built on Nebraska's strengths",
     body: "The Midwest and Nebraska combine strong renewable energy potential with a well-established agricultural and bioethanol industry, providing the key resources needed to produce e-NG at industrial scale.",
   },
   {
-    title: "Very low carbon, fully compatible.",
+    title: "Very low carbon, fully compatible",
     body: "Live Oak e-NG is chemically equivalent to conventional natural gas, allowing it to use existing pipelines, liquefaction facilities, ships and customer equipment. This makes it possible to significantly reduce the carbon intensity of gas supply while leveraging infrastructure already in place.",
   },
   {
-    title: "Connecting Nebraska to Japan.",
+    title: "Connecting Nebraska to Japan",
     body: "Developed by 5 global energy and industrial partners, Live Oak transforms local renewable resources and biogenic carbon into a very low-carbon fuel for customers seeking to reduce emissions from existing gas-based energy systems. Live Oak e-NG will primarily serve the decarbonization of gas distribution in Japan.",
   },
   {
-    title: "Pioneering a new industrial value chain.",
+    title: "Pioneering a new industrial value chain",
     body: "Live Oak brings together technologies and infrastructure that already exist individually, but integrates them at a scale and across a value chain that remains pioneering for the e-NG industry. The project is designed not only to produce e-NG, but to establish a model that can be replicated as the market develops.",
   },
 ];
 
 export default function About() {
   return (
-    <section className="section-padding container-padding relative isolate bg-linear-to-tr from-secondary to-primary dark:from-background dark:to-background text-white overflow-hidden">
+    <section
+      id="about"
+      className="section-padding container-padding relative isolate bg-linear-to-tr from-secondary to-primary dark:from-background dark:to-background text-white overflow-hidden"
+    >
       {/* Background image */}
       <motion.div
         initial={{ scale: 1.1 }}
@@ -71,8 +74,8 @@ export default function About() {
             infrastructure to produce e-NG with a very low lifecycle carbon
             footprint. By combining renewable hydrogen with recycled biogenic
             CO₂, Live Oak is designed to provide the same molecule as
-            conventional natural gas, but with dramatically lower
-            greenhouse-gas emissions across its lifecycle.
+            conventional natural gas, but with dramatically lower greenhouse-gas
+            emissions across its lifecycle.
           </p>
         </motion.div>
 

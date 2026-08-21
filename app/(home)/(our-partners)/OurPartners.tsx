@@ -124,7 +124,7 @@ export default function OurPartners() {
   const [activePartner, setActivePartner] = useState<Partner | null>(null);
 
   return (
-    <section className="section-padding container-padding">
+    <section id="our-partners" className="section-padding container-padding">
       <div className="max-w-7xl w-full mx-auto flex flex-col gap-16">
         {/* ── Header ──────────────────────────────────────────────────────── */}
         <motion.div
@@ -139,7 +139,7 @@ export default function OurPartners() {
               Our Partners
             </h2>
             <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight">
-              Jointly developed by five global leaders.
+              Jointly developed by five global leaders
             </h3>
           </div>
           <p className="text-lg text-current/80 leading-relaxed">
@@ -170,12 +170,10 @@ export default function OurPartners() {
                   transition={{ duration: 0.2, ease: easeOut }}
                   className="flex flex-col items-center gap-1.5 text-center max-w-lg"
                 >
-                  <p className="text-sm font-semibold text-secondary dark:text-primary">
+                  <p className="text-lg font-bold text-secondary dark:text-primary">
                     {activePartner.name}
                   </p>
-                  <p className="text-sm text-current/60 leading-relaxed">
-                    {activePartner.description}
-                  </p>
+                  <p className="text-current/60">{activePartner.description}</p>
                 </motion.div>
               ) : (
                 <motion.p
@@ -184,7 +182,7 @@ export default function OurPartners() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="text-xs text-current/30 tracking-wide"
+                  className="text-sm text-current/30 tracking-wide"
                 >
                   Hover a logo to learn more
                 </motion.p>
