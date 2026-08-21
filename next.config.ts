@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
   output: "export",
   images: {
     unoptimized: true,
+    remotePatterns: [
+      { protocol: "https", hostname: "totalenergies.com" },
+      { protocol: "https", hostname: "dxm.content-center.totalenergies.com" },
+    ],
   },
   // Only to be run during development! Once live under live-oak-eng.com this needs to be removed!
   basePath: process.env.NODE_ENV === "development" ? "" : "/liveoak-frontend",

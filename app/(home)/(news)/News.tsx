@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { easeOut, motion } from "motion/react";
+import LiveOakLogo from "@/public/LiveOakLogo.png";
 
 type NewsArticle = {
   title: string;
@@ -10,7 +13,7 @@ type NewsArticle = {
   source: string;
   excerpt: string;
   href: string;
-  image: string;
+  image: string | StaticImageData;
   archive?: boolean;
 };
 
@@ -24,7 +27,7 @@ const NEWS_ARTICLES: NewsArticle[] = [
     excerpt:
       "Houston, August X, 2026 – The Live Oak consortium today announced the launch of Front-End Engineering Design (FEED) activities for the Live Oak project, a large-scale electric natural gas (e-NG, also known as e-methane) production facility currently under development in Nebraska, United States. The consortium comprises TotalEnergies and TES (each holding a 33.35% stake in Live Oak), alongside Osaka Gas, Toho Gas and ITOCHU (33.3% combined).",
     href: "/Live_Oak_PR_FEED_v20260821.pdf",
-    image: "/LiveOakLogo.png",
+    image: LiveOakLogo,
   },
   {
     title:
@@ -186,11 +189,11 @@ function NewsCard({ article }: { article: NewsArticle }) {
     <div className="flex flex-col h-full rounded-xl overflow-hidden border border-current/10 bg-foreground/3 group">
       {/* Image */}
       <div className="relative w-full aspect-video overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={article.image}
           alt={article.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         {article.archive && (
           <span className="absolute top-3 right-3 px-2 py-0.5 rounded text-xs font-bold tracking-widest uppercase bg-primary text-white">
