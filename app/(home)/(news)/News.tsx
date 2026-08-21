@@ -22,11 +22,11 @@ const NEWS_ARTICLES: NewsArticle[] = [
   {
     title:
       "Commencement of FEED for the Live Oak Project for e-NG Production in Nebraska",
-    date: "August 21, 2026",
+    date: "August 27, 2026",
     source: "LiveOak e-NG",
     archive: false,
     excerpt:
-      "Houston, August X, 2026 – The Live Oak consortium today announced the launch of Front-End Engineering Design (FEED) activities for the Live Oak project, a large-scale electric natural gas (e-NG, also known as e-methane) production facility currently under development in Nebraska, United States. The consortium comprises TotalEnergies and TES (each holding a 33.35% stake in Live Oak), alongside Osaka Gas, Toho Gas and ITOCHU (33.3% combined).",
+      "Houston, August 27th, 2026 – The Live Oak consortium today announced the launch of Front-End Engineering Design (FEED) activities for the Live Oak project, a large-scale electric natural gas (e-NG, also known as e-methane) production facility currently under development in Nebraska, United States. The consortium comprises TotalEnergies and TES (each holding a 33.35% stake in Live Oak), alongside Osaka Gas, Toho Gas and ITOCHU (33.3% combined).",
     href: "/Live_Oak_PR_FEED_v20260821.pdf",
     image: LiveOakLogo,
   },
