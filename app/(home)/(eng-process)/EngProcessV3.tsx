@@ -99,7 +99,10 @@ const VALUE_CHAIN: { Icon: LucideIcon; label: string }[] = [
 
 export default function EngProcessV3() {
   return (
-    <section className="section-padding container-padding">
+    <section
+      id="emethane-process"
+      className="section-padding container-padding"
+    >
       <div className="max-w-7xl w-full mx-auto flex flex-col gap-20">
         {/* ── Header ──────────────────────────────────────────────────────── */}
         <motion.div
@@ -184,9 +187,16 @@ export default function EngProcessV3() {
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-current/60">
                     {step.inputs.flatMap((inp, j) => [
                       ...(j > 0
-                        ? [<span key={`plus-${j}`} className="text-current/30">+</span>]
+                        ? [
+                            <span key={`plus-${j}`} className="text-current/30">
+                              +
+                            </span>,
+                          ]
                         : []),
-                      <span key={inp.label} className="inline-flex items-center gap-1">
+                      <span
+                        key={inp.label}
+                        className="inline-flex items-center gap-1"
+                      >
                         <inp.Icon className="size-3.5 shrink-0 text-secondary dark:text-primary" />
                         {inp.label}
                       </span>,
@@ -382,4 +392,3 @@ export default function EngProcessV3() {
     </section>
   );
 }
-

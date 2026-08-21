@@ -31,7 +31,10 @@ const REASONS: Reason[] = [
 
 export default function About() {
   return (
-    <section className="section-padding container-padding relative isolate bg-linear-to-tr from-secondary to-primary dark:from-background dark:to-background text-white overflow-hidden">
+    <section
+      id="about"
+      className="section-padding container-padding relative isolate bg-linear-to-tr from-secondary to-primary dark:from-background dark:to-background text-white overflow-hidden"
+    >
       {/* Background image */}
       <motion.div
         initial={{ scale: 1.1 }}

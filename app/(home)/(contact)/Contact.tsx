@@ -5,7 +5,7 @@ import { easeOut, motion } from "motion/react";
 
 export default function Contact() {
   return (
-    <section className="section-padding container-padding">
+    <section id="contact" className="section-padding container-padding">
       <div className="max-w-7xl w-full mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50, filter: "blur(12px)" }}

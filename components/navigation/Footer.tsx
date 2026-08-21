@@ -92,7 +92,7 @@ export function FooterContent() {
 
   const discoverLinks = [
     getLink("#emethane-process"),
-    getLink("#project-map"),
+    getLink("#our-partners"),
     getLink("#faq"),
   ].filter(Boolean);
 

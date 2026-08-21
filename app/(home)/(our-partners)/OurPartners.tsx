@@ -124,7 +124,7 @@ export default function OurPartners() {
   const [activePartner, setActivePartner] = useState<Partner | null>(null);
 
   return (
-    <section className="section-padding container-padding">
+    <section id="our-partners" className="section-padding container-padding">
       <div className="max-w-7xl w-full mx-auto flex flex-col gap-16">
         {/* ── Header ──────────────────────────────────────────────────────── */}
         <motion.div

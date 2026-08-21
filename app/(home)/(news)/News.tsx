@@ -89,7 +89,7 @@ export default function News() {
   };
 
   return (
-    <section className="section-padding container-padding">
+    <section id="news" className="section-padding container-padding">
       <div className="max-w-7xl w-full mx-auto flex flex-col gap-12">
         {/* Header row */}
         <div className="flex items-end justify-between gap-6">
@@ -136,29 +136,29 @@ export default function News() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1, ease: easeOut, delay: 0.15 }}
         >
-        <div
-          ref={containerRef}
-          className="overflow-hidden"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          <motion.div
-            className="flex gap-4"
-            animate={{ x: slideOffset > 0 ? -active * slideOffset : 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 180,
-              damping: 30,
-              mass: 1,
-            }}
+          <div
+            ref={containerRef}
+            className="overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           >
-            {NEWS_ARTICLES.map((article, i) => (
-              <div key={i} className="shrink-0 w-full sm:w-[calc(50%-8px)]">
-                <NewsCard article={article} />
-              </div>
-            ))}
-          </motion.div>
-        </div>
+            <motion.div
+              className="flex gap-4"
+              animate={{ x: slideOffset > 0 ? -active * slideOffset : 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 180,
+                damping: 30,
+                mass: 1,
+              }}
+            >
+              {NEWS_ARTICLES.map((article, i) => (
+                <div key={i} className="shrink-0 w-full sm:w-[calc(50%-8px)]">
+                  <NewsCard article={article} />
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </motion.div>
 
         {/* Dot indicators */}
