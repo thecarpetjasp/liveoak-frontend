@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { easeOut, motion } from "motion/react";
 
@@ -11,14 +11,27 @@ type NewsArticle = {
   excerpt: string;
   href: string;
   image: string;
+  archive?: boolean;
 };
 
 const NEWS_ARTICLES: NewsArticle[] = [
   {
     title:
+      "Commencement of FEED for the Live Oak Project for e-NG Production in Nebraska",
+    date: "August 21, 2026",
+    source: "LiveOak e-NG",
+    archive: false,
+    excerpt:
+      "Houston, August X, 2026 – The Live Oak consortium today announced the launch of Front-End Engineering Design (FEED) activities for the Live Oak project, a large-scale electric natural gas (e-NG, also known as e-methane) production facility currently under development in Nebraska, United States. The consortium comprises TotalEnergies and TES (each holding a 33.35% stake in Live Oak), alongside Osaka Gas, Toho Gas and ITOCHU (33.3% combined).",
+    href: "/Live_Oak_PR_FEED_v20260821.pdf",
+    image: "/LiveOakLogo.png",
+  },
+  {
+    title:
       "TotalEnergies and TES Join Forces to Develop a Large-Scale e-NG Production Unit",
     date: "May 31, 2023",
     source: "TotalEnergies",
+    archive: true,
     excerpt:
       "TotalEnergies has partnered with Tree Energy Solutions to develop a major synthetic natural gas facility in the United States, targeting 100,000–200,000 metric tons of e-NG per year using a 1 GW electrolyzer powered by wind and solar energy.",
     href: "https://totalenergies.com/newsroom/united-states-totalenergies-and-tes-join-forces-develop-large-scale-e-ng/",
@@ -38,10 +51,29 @@ const NEWS_ARTICLES: NewsArticle[] = [
   },
 ];
 
+const GAP = 16; // px — matches gap-4
+
 export default function News() {
   const [active, setActive] = useState(0);
   const total = NEWS_ARTICLES.length;
   const touchStartX = useRef(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [slideOffset, setSlideOffset] = useState(0);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const update = () => {
+      const w = el.offsetWidth;
+      const isTwoUp = w >= 640;
+      const cardW = isTwoUp ? (w - GAP) / 2 : w;
+      setSlideOffset(cardW + (isTwoUp ? GAP : 0));
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   const prev = () => setActive((i) => Math.max(0, i - 1));
   const next = () => setActive((i) => Math.min(total - 1, i + 1));
@@ -97,42 +129,33 @@ export default function News() {
           </motion.div>
         </div>
 
-        {/* Desktop: 2-column grid */}
-        <div className="hidden lg:grid grid-cols-2 gap-6">
-          {NEWS_ARTICLES.map((article, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 50, filter: "blur(12px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 1, ease: easeOut, delay: i * 0.15 }}
-            >
-              <NewsCard article={article} />
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Mobile / tablet: single-card carousel */}
+        {/* Carousel — all screen sizes */}
         <div
-          className="lg:hidden overflow-hidden"
-          onTouchStart={handleTouchStart}
+          ref={containerRef}
+          className="overflow-hidden"
+onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
           <motion.div
-            className="flex"
-            animate={{ x: `-${active * 100}%` }}
-            transition={{ duration: 0.5, ease: easeOut }}
+            className="flex gap-4"
+            animate={{ x: slideOffset > 0 ? -active * slideOffset : 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 180,
+              damping: 30,
+              mass: 1,
+            }}
           >
             {NEWS_ARTICLES.map((article, i) => (
-              <div key={i} className="shrink-0 w-full">
+              <div key={i} className="shrink-0 w-full sm:w-[calc(50%-8px)]">
                 <NewsCard article={article} />
               </div>
             ))}
           </motion.div>
         </div>
 
-        {/* Dot indicators — mobile only */}
-        <div className="flex lg:hidden justify-center items-center gap-2">
+        {/* Dot indicators */}
+        <div className="flex justify-center items-center gap-2">
           {NEWS_ARTICLES.map((_, i) => (
             <button
               key={i}
@@ -162,6 +185,11 @@ function NewsCard({ article }: { article: NewsArticle }) {
           alt={article.title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
+        {article.archive && (
+          <span className="absolute top-3 right-3 px-2 py-0.5 rounded text-xs font-bold tracking-widest uppercase bg-primary text-white">
+            Archive
+          </span>
+        )}
       </div>
 
       {/* Content */}
