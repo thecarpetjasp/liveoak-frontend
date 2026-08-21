@@ -28,10 +28,10 @@ export default function LiveOakAtAGlance() {
           className="flex flex-col gap-2"
         >
           <h2 className="text-lg font-semibold tracking-tight text-secondary dark:text-primary">
-            Key Facts
+            Live Oak at a Glance
           </h2>
           <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight">
-            Live Oak at a Glance
+            The project in numbers
           </h3>
         </motion.div>
 
@@ -45,7 +45,7 @@ export default function LiveOakAtAGlance() {
               transition={{ duration: 1, ease: easeOut, delay: i * 0.08 }}
               className="flex flex-col gap-2 p-8 rounded-xl border border-current/10 bg-foreground/3"
             >
-              <p className="text-2xl sm:text-3xl font-semibold tracking-tight">
+              <p className="text-2xl sm:text-3xl font-semibold tracking-tight text-secondary dark:text-primary">
                 {fact.value}
               </p>
               <p className="text-current/70 text-sm leading-relaxed">
