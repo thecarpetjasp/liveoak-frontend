@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
+import Link from "next/link";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { easeOut, motion } from "motion/react";
 import LiveOakLogo from "@/public/LiveOakLogo.png";
@@ -224,7 +225,7 @@ function NewsCard({ article }: { article: NewsArticle }) {
         </p>
 
         {/* Read more */}
-        <a
+        <Link
           href={article.href}
           target="_blank"
           rel="noopener noreferrer"
@@ -232,7 +233,7 @@ function NewsCard({ article }: { article: NewsArticle }) {
         >
           Read article
           <ExternalLink className="size-3.5" />
-        </a>
+        </Link>
       </div>
     </div>
   );
