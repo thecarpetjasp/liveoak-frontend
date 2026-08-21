@@ -7,6 +7,7 @@ import Location from "./(location)/Location";
 import News from "./(news)/News";
 import OurPartners from "./(our-partners)/OurPartners";
 import Overview from "./(overview)/Overview";
+import ProjectTimeline from "./(project-timeline)/ProjectTimeline";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <About></About>
       <EngProcessV3></EngProcessV3>
       <OurPartners></OurPartners>
+      <ProjectTimeline></ProjectTimeline>
       <News></News>
       <Contact></Contact>
       <Location></Location>
