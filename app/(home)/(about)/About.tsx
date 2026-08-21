@@ -71,8 +71,8 @@ export default function About() {
             infrastructure to produce e-NG with a very low lifecycle carbon
             footprint. By combining renewable hydrogen with recycled biogenic
             CO₂, Live Oak is designed to provide the same molecule as
-            conventional natural gas, but with dramatically lower greenhouse-gas
-            emissions across its lifecycle.
+            conventional natural gas, but with dramatically lower
+            greenhouse-gas emissions across its lifecycle.
           </p>
         </motion.div>
 
@@ -85,7 +85,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 1, ease: easeOut, delay: i * 0.1 }}
-              className="flex flex-col gap-3 p-8 rounded-xl bg-background/20 dark:bg-slate-700/20 backdrop-blur-xl"
+              className="flex flex-col gap-3 p-8 rounded-xl bg-background/20 backdrop-blur-xl"
             >
               <h4 className="text-lg font-semibold tracking-tight">
                 {reason.title}

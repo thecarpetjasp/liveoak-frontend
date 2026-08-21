@@ -1,6 +1,6 @@
 import About from "./(about)/About";
 import Contact from "./(contact)/Contact";
-import EngProcess from "./(eng-process)/EngProcess";
+import EngProcessV3 from "./(eng-process)/EngProcessV3";
 import Hero from "./(hero)/Hero";
 import LiveOakAtAGlance from "./(live-oak-at-a-glance)/LiveOakAtAGlance";
 import Location from "./(location)/Location";
@@ -14,7 +14,7 @@ export default function Home() {
       <LiveOakAtAGlance></LiveOakAtAGlance>
       <Overview></Overview>
       <About></About>
-      <EngProcess></EngProcess>
+      <EngProcessV3></EngProcessV3>
       <News></News>
       <Contact></Contact>
       <Location></Location>
