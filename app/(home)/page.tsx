@@ -5,6 +5,7 @@ import Hero from "./(hero)/Hero";
 import LiveOakAtAGlance from "./(live-oak-at-a-glance)/LiveOakAtAGlance";
 import Location from "./(location)/Location";
 import News from "./(news)/News";
+import OurPartners from "./(our-partners)/OurPartners";
 import Overview from "./(overview)/Overview";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Overview></Overview>
       <About></About>
       <EngProcessV3></EngProcessV3>
+      <OurPartners></OurPartners>
       <News></News>
       <Contact></Contact>
       <Location></Location>
