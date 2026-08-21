@@ -1,6 +1,7 @@
 import About from "./(about)/About";
 import Contact from "./(contact)/Contact";
 import EngProcessV3 from "./(eng-process)/EngProcessV3";
+import FAQ from "./(faq)/FAQ";
 import Hero from "./(hero)/Hero";
 import LiveOakAtAGlance from "./(live-oak-at-a-glance)/LiveOakAtAGlance";
 import Location from "./(location)/Location";
@@ -20,6 +21,7 @@ export default function Home() {
       <OurPartners></OurPartners>
       <ProjectTimeline></ProjectTimeline>
       <News></News>
+      <FAQ></FAQ>
       <Contact></Contact>
       <Location></Location>
     </main>
