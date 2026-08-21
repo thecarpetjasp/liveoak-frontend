@@ -27,10 +27,10 @@ export default function HeroDetail() {
         Nebraska&apos;s biogenic CO₂ from the bioethanol industry and existing
         energy infrastructure to produce a new generation of natural gas, with a
         very low carbon intensity. From the heart of the Midwest, the project is
-        building a supply chain designed to serve customers around the world such
-        as Japan. There, it will gradually substitute for fossil natural gas
-        across existing city-gas networks, delivering lower-carbon energy without
-        requiring an entirely new energy system.
+        building a supply chain designed to serve customers around the world
+        such as Japan. There, it will gradually substitute for fossil natural
+        gas across existing city-gas networks, delivering lower-carbon energy
+        without requiring an entirely new energy system.
       </motion.p>
     </div>
   );
@@ -45,10 +45,12 @@ export function PromotionalMsg() {
       className="text-xs sm:text-base"
     >
       <p className="text-center inline-block px-3 py-1.5 rounded-full border-primary border-2 bg-primary/50">
-        We can place a promotional message here.{" "}
+        Live Oak consortium announced the launch of Front-End Engineering Design
+        (FEED){" "}
         <a
-          href="#"
+          href="/Live_Oak_PR_FEED_v20260821.pdf"
           className="inline-flex items-center gap-1 cursor-pointer text-yellow-200 font-semibold hover:underline"
+          target="_blank"
         >
           Read more <ArrowRight className="size-5" />
         </a>
