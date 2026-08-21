@@ -42,11 +42,6 @@ const FAQS = [
     answer:
       "Yes. Live Oak is expected to support jobs during construction and ongoing operations, along with opportunities for local businesses and suppliers. As a major industrial investment in the region, the project aims to contribute to the local economy. Specific figures will be shared as the project develops.",
   },
-  {
-    question: "How can local companies participate?",
-    answer:
-      "Local businesses interested in supplying or supporting the project are encouraged to get in touch through the contact page. As Live Oak advances through engineering and toward construction, there will be opportunities across a range of trades, services and suppliers.",
-  },
 ] as const;
 
 // ─── Section ───────────────────────────────────────────────────────────────
