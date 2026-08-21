@@ -130,10 +130,16 @@ export default function News() {
         </div>
 
         {/* Carousel — all screen sizes */}
+        <motion.div
+          initial={{ opacity: 0, y: 50, filter: "blur(12px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1, ease: easeOut, delay: 0.15 }}
+        >
         <div
           ref={containerRef}
           className="overflow-hidden"
-onTouchStart={handleTouchStart}
+          onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
           <motion.div
@@ -153,6 +159,7 @@ onTouchStart={handleTouchStart}
             ))}
           </motion.div>
         </div>
+        </motion.div>
 
         {/* Dot indicators */}
         <div className="flex justify-center items-center gap-2">
