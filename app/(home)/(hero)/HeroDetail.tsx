@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import { easeInOut, motion } from "motion/react";
+import Link from "next/link";
 
 export default function HeroDetail() {
   return (
@@ -47,13 +48,13 @@ export function PromotionalMsg() {
       <p className="text-center inline-block px-3 py-1.5 rounded-full border-primary border-2 bg-primary/50">
         Live Oak consortium announced the launch of Front-End Engineering Design
         (FEED){" "}
-        <a
+        <Link
           href="/Live_Oak_PR_FEED_v20260821.pdf"
           className="inline-flex items-center gap-1 cursor-pointer text-yellow-200 font-semibold hover:underline"
           target="_blank"
         >
           Read more <ArrowRight className="size-5" />
-        </a>
+        </Link>
       </p>
     </motion.div>
   );
