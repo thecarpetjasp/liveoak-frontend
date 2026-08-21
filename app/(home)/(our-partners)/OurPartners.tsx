@@ -170,12 +170,10 @@ export default function OurPartners() {
                   transition={{ duration: 0.2, ease: easeOut }}
                   className="flex flex-col items-center gap-1.5 text-center max-w-lg"
                 >
-                  <p className="text-sm font-semibold text-secondary dark:text-primary">
+                  <p className="text-lg font-bold text-secondary dark:text-primary">
                     {activePartner.name}
                   </p>
-                  <p className="text-sm text-current/60 leading-relaxed">
-                    {activePartner.description}
-                  </p>
+                  <p className="text-current/60">{activePartner.description}</p>
                 </motion.div>
               ) : (
                 <motion.p
@@ -184,7 +182,7 @@ export default function OurPartners() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="text-xs text-current/30 tracking-wide"
+                  className="text-sm text-current/30 tracking-wide"
                 >
                   Hover a logo to learn more
                 </motion.p>
