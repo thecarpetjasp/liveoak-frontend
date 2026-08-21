@@ -30,18 +30,18 @@ const NEWS_ARTICLES: NewsArticle[] = [
     href: "/Live_Oak_PR_FEED_v20260821.pdf",
     image: LiveOakLogo,
   },
-  {
-    title:
-      "TotalEnergies and TES Join Forces to Develop a Large-Scale e-NG Production Unit",
-    date: "May 31, 2023",
-    source: "TotalEnergies",
-    archive: true,
-    excerpt:
-      "TotalEnergies has partnered with Tree Energy Solutions to develop a major synthetic natural gas facility in the United States, targeting 100,000–200,000 metric tons of e-NG per year using a 1 GW electrolyzer powered by wind and solar energy.",
-    href: "https://totalenergies.com/newsroom/united-states-totalenergies-and-tes-join-forces-develop-large-scale-e-ng/",
-    image:
-      "https://totalenergies.com/newsroom/wp-content/uploads/2026/04/13bec32ee0f5cdf9d7649f88dbd8ecef-m.jpg",
-  },
+  // {
+  //   title:
+  //     "TotalEnergies and TES Join Forces to Develop a Large-Scale e-NG Production Unit",
+  //   date: "May 31, 2023",
+  //   source: "TotalEnergies",
+  //   archive: true,
+  //   excerpt:
+  //     "TotalEnergies has partnered with Tree Energy Solutions to develop a major synthetic natural gas facility in the United States, targeting 100,000–200,000 metric tons of e-NG per year using a 1 GW electrolyzer powered by wind and solar energy.",
+  //   href: "https://totalenergies.com/newsroom/united-states-totalenergies-and-tes-join-forces-develop-large-scale-e-ng/",
+  //   image:
+  //     "https://totalenergies.com/newsroom/wp-content/uploads/2026/04/13bec32ee0f5cdf9d7649f88dbd8ecef-m.jpg",
+  // },
   {
     title:
       "TotalEnergies, TES, Osaka Gas, Toho Gas and ITOCHU Partner to Develop the Live Oak Project",
