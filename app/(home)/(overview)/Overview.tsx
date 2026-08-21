@@ -24,7 +24,7 @@ export default function Overview() {
             </h2>
             <h3 className="text-4xl font-semibold tracking-tight">
               Project Live Oak is advancing a new way to produce natural gas
-              with a lower carbon footprint.
+              with a lower carbon footprint
             </h3>
           </div>
           <div className="flex flex-col gap-6 text-current/80">

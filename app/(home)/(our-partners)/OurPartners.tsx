@@ -139,7 +139,7 @@ export default function OurPartners() {
               Our Partners
             </h2>
             <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight">
-              Jointly developed by five global leaders.
+              Jointly developed by five global leaders
             </h3>
           </div>
           <p className="text-lg text-current/80 leading-relaxed">
