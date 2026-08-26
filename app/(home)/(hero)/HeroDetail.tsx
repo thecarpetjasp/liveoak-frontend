@@ -50,7 +50,7 @@ export function PromotionalMsg() {
         Live Oak consortium announced the launch of Front-End Engineering Design
         (FEED){" "}
         <Link
-          href="/Live_Oak_PR_FEED_v20260821.pdf"
+          href="/FEED"
           className="inline-flex items-center gap-1 cursor-pointer text-yellow-200 font-semibold hover:underline"
           target="_blank"
         >
