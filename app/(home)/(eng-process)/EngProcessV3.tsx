@@ -39,7 +39,7 @@ const STEPS: Step[] = [
     Icon: Zap,
     title: "Renewable electricity + water",
     description:
-      "Live Oak uses renewable electricity from the Midwest's abundant wind and solar resources to power a large-scale electrolyser. The electrolyser splits water into hydrogen and oxygen. Because no fossil fuels are involved, the hydrogen produced carries a very low carbon intensity.",
+      "Live Oak uses renewable electricity from the Midwest's abundant wind and solar resources to power a large-scale electrolyser. The electrolyser splits water into hydrogen and oxygen, with the resulting hydrogen carrying a very low carbon intensity.",
     inputs: [
       { Icon: Zap, label: "Renewable electricity" },
       { Icon: Droplets, label: "Water" },
