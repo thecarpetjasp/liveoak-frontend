@@ -27,7 +27,7 @@ const NEWS_ARTICLES: NewsArticle[] = [
     archive: false,
     excerpt:
       "Houston, August 27th, 2026 – The Live Oak consortium today announced the launch of Front-End Engineering Design (FEED) activities for the Live Oak project, a large-scale electric natural gas (e-NG, also known as e-methane) production facility currently under development in Nebraska, United States. The consortium comprises TotalEnergies and TES (each holding a 33.35% stake in Live Oak), alongside Osaka Gas, Toho Gas and ITOCHU (33.3% combined).",
-    href: "/Live_Oak_PR_FEED_v20260821.pdf",
+    href: "/FEED",
     image: LiveOakLogo,
   },
   // {
