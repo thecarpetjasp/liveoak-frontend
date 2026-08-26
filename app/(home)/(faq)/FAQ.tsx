@@ -40,7 +40,7 @@ const FAQS = [
   {
     question: "Will there be local jobs?",
     answer:
-      "Yes. Live Oak is expected to support jobs during construction and ongoing operations, along with opportunities for local businesses and suppliers. As a major industrial investment in the region, the project aims to contribute to the local economy. Specific figures will be shared as the project develops.",
+      "Yes. Live Oak is expected to support a range of jobs, including the high-skilled roles, during construction and ongoing operations, along with opportunities for local businesses and suppliers. As a major industrial investment in the region, the project aims to contribute to the local economy. Specific figures will be shared as the project develops.",
   },
 ] as const;
 
