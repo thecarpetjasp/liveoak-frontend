@@ -21,7 +21,7 @@ const REASONS: Reason[] = [
   },
   {
     title: "Connecting Nebraska to Japan",
-    body: "Developed by 5 global energy and industrial partners, Live Oak transforms local renewable resources and biogenic carbon into a very low-carbon fuel for customers seeking to reduce emissions from existing gas-based energy systems. Live Oak e-NG will primarily serve the decarbonization of gas distribution in Japan.",
+    body: "Developed by 5 global energy and industrial partners, Live Oak transforms local renewable resources and biogenic carbon into a very low-carbon fuel for customers seeking to reduce emissions from existing gas-based energy systems. Live Oak e-NG will primarily serve the decarbonization of gas distribution in Japan, supporting its commitment to inject 1% of renewable natural gas into the city gas network by 2030 as part of a broader strategy to achieve carbon neutrality by 2050.",
   },
   {
     title: "Pioneering a new industrial value chain",
