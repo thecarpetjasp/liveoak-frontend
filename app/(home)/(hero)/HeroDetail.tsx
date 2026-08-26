@@ -26,12 +26,13 @@ export default function HeroDetail() {
       >
         Live Oak brings together the Midwest&apos;s renewable energy potential,
         Nebraska&apos;s biogenic CO₂ from the bioethanol industry and existing
-        energy infrastructure to produce a new generation of natural gas, with a
-        very low carbon intensity. From the heart of the Midwest, the project is
-        building a supply chain designed to serve customers around the world
-        such as Japan. There, it will gradually substitute for fossil natural
-        gas across existing city-gas networks, delivering lower-carbon energy
-        without requiring an entirely new energy system.
+        energy infrastructure to produce a new generation of natural gas,
+        electric natural gas (e-NG), with a very low carbon intensity. From the
+        heart of the Midwest, the project is building a supply chain designed to
+        serve customers around the world such as Japan. There, it will gradually
+        substitute for fossil natural gas across existing city-gas networks,
+        delivering lower-carbon energy without requiring an entirely new energy
+        system.
       </motion.p>
     </div>
   );
