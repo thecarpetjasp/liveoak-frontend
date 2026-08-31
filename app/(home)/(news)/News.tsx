@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { easeOut, motion } from "motion/react";
 import LiveOakLogo from "@/public/LiveOakLogo.png";
+import FeedPhoto from "@/public/feed-announcement.png";
 
 type NewsArticle = {
   title: string;
@@ -28,7 +29,7 @@ const NEWS_ARTICLES: NewsArticle[] = [
     excerpt:
       "Houston, August 27th, 2026 – The Live Oak consortium today announced the launch of Front-End Engineering Design (FEED) activities for the Live Oak project, a large-scale electric natural gas (e-NG, also known as e-methane) production facility currently under development in Nebraska, United States. The consortium comprises TotalEnergies and TES (each holding a 33.35% stake in Live Oak), alongside Osaka Gas, Toho Gas and ITOCHU (33.3% combined).",
     href: "/FEED",
-    image: LiveOakLogo,
+    image: FeedPhoto,
   },
   // {
   //   title:
@@ -194,7 +195,7 @@ function NewsCard({ article }: { article: NewsArticle }) {
           src={article.image}
           alt={article.title}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-fill transition-transform duration-700 group-hover:scale-105"
         />
         {article.archive && (
           <span className="absolute top-3 right-3 px-2 py-0.5 rounded text-xs font-bold tracking-widest uppercase bg-primary text-white">
