@@ -229,7 +229,7 @@ export default function EngProcessV3() {
         >
           Want to learn more about e&#8209;NG?{" "}
           <a
-            href="https://www.engcoalition.org"
+            href="https://www.eng-coalition.org/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-secondary dark:text-primary font-semibold hover:underline"
