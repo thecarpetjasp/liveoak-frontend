@@ -16,7 +16,7 @@ const PARTNERS = [
   },
   {
     name: "TES",
-    logo: "https://cdn.sanity.io/images/1zkfj8c9/production/febf02a318337d8ccffa231df03d7c61f6cdc39d-114x34.svg?w=256&q=75&fit=clip&auto=format",
+    logo: "/Logo_TES_RGB_Main_White.png",
     url: "https://www.tes-h2.com",
     description:
       "e-NG developer bringing expertise in the development and integration of large-scale e-NG value chains.",
